@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Barber Dashboard</title>
+</head>
+<body>
+
+<h2>Appointments</h2>
+
+<table border="1">
+
+<tr> <!-- tabular table rows x column header for the appointments -->
+<th>Client</th>
+<th>Barber</th>
+<th>Haircut</th>
+<th>Date</th>
+<th>Time</th>
+</tr>
+
+{% for a in appointments %}
+
+<tr> <!-- rows on the table -->
+<td>{{ a.client_name }}</td>
+<td>{{ a.barber_name }}</td>
+<td>{{ a.haircut_name }}</td>
+<td>{{ a.appointment_date }}</td>
+<td>{{ a.appointment_time }}</td>
+</tr>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment</title>
+</head>
+<body>
+
+<h2>Book Appointment</h2>
+
+<form action="/book" method="POST">
+
+Name:
+<input type="text" name="client_name" required>
+<br><br>
+
+Barber:
+<select name="barber_id">
+
+{% for barber in barbers %}
+<option value="{{ barber.barber_id }}">
+{{ barber.barber_name }}
+</option>
+{% endfor %}
+
+Haircut:
+<select name="haircut_id">
+
+{% for haircut in haircuts %}
+<option value="{{ haircut.haircut_id }}">
+{{ haircut.haircut_name }} (€{{ haircut.price }})
+</option>
+{% endfor %}
+
+</select>
+
+</select>
+
+<br><br>
+
+Date:
+<input type="date" name="date" required>
+
+<br><br>
+
+Time:
+<input type="time" name="time" required>
+
+<br><br>
+
+<button type="submit">Book</button>
+
+</form>
+
+</body>
+</html>
